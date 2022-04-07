@@ -30,7 +30,7 @@ if(accesstoken == undefined){
 
 
 
-const BinPacking = require('bp3d');
+const BinPacking = require('./bp3d');
 const Item = BinPacking.Item;
 const Bin = BinPacking.Bin;
 const Packer = BinPacking.Packer;
