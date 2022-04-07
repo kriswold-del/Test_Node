@@ -42,9 +42,9 @@ let item3 = new Item("Item 3", 250, 250, 2, 200);
 let packer = new Packer();
 
  packer.addBin(bin1);
-// packer.addItem(item1);
-// packer.addItem(item2);
-// packer.addItem(item3);
+ packer.addItem(item1);
+ packer.addItem(item2);
+ packer.addItem(item3);
 //
  // pack items into bin1
 // packer.pack();
