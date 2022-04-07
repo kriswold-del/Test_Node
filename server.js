@@ -41,16 +41,16 @@ let item2 = new Item("Item 2", 250, 250, 2, 200);
 let item3 = new Item("Item 3", 250, 250, 2, 200);
 let packer = new Packer();
 
-packer.addBin(bin1);
-packer.addItem(item1);
-packer.addItem(item2);
-packer.addItem(item3);
-
-// pack items into bin1
-packer.pack();
+// packer.addBin(bin1);
+// packer.addItem(item1);
+// packer.addItem(item2);
+// packer.addItem(item3);
+//
+// // pack items into bin1
+// packer.pack();
 
 // item1, item2, item3
-console.log(bin1.items);
+//console.log(bin1.items);
 
 // items will be empty, all items was packed
 console.log(packer.items);
