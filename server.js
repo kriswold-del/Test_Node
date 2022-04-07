@@ -1,7 +1,7 @@
 var express = require('express')
 const perf = require('execution-time')();
-var bins;
-var items;
+// var bins;
+// var items;
 const PORT = process.env.PORT || 3000;
 app = express(),
     app.use(
@@ -13,8 +13,8 @@ app.use(express.json())
 // Access the parse results as request.body
 app.post('/', function(request, response){
     perf.start();
-    bins = JSON.parse(request.body.bins);
-    items = JSON.parse(request.body.items);
+    // bins = JSON.parse(request.body.bins);
+    // items = JSON.parse(request.body.items);
     const results = perf.stop();
     var jsonresponse = {"sampleresponse": result[0],"executiontime": results};
     response.send(jsonresponse);
