@@ -106,7 +106,7 @@ function createColumn() {
     return { packageReferences: [] };
 }
 
-export function getFirstColumn(layer) {
+function getFirstColumn(layer) {
     const [firstColumn] = layer.columns.slice(0, 1);
     return firstColumn;
 }
@@ -135,7 +135,7 @@ function calculateRemainingGap(originPackage, bin, placingAxis) {
     return Math.max(-1, remainingGap);
 }
 
-export function calculateAmountOfPackageToBePlaced(remainingGap, packageToBePlaced, placingAxis) {
+function calculateAmountOfPackageToBePlaced(remainingGap, packageToBePlaced, placingAxis) {
     return Math.floor(remainingGap / getDimensionOfAxis(packageToBePlaced, placingAxis));
 }
 
