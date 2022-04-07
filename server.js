@@ -47,7 +47,7 @@ let packer = new Packer();
  packer.addItem(item3);
 //
  // pack items into bin1
-// packer.pack();
+ packer.pack();
 
 // item1, item2, item3
 //console.log(bin1.items);
