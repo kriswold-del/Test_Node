@@ -22,7 +22,7 @@ app.post('/', function(request, response){
 });
 
 if(accesstoken == undefined){
-    app.use(express.static('www'));
+    app.use(express.static('public'));
     console.log('3dbin html server started on : ' + PORT);
 }else{
     console.log('3dbin RESTful API server started on: ' + PORT);
