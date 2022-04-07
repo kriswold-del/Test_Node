@@ -1,24 +1,23 @@
 {
-  "name": "binpackingjs",
-  "version": "3.0.2",
-  "description": "2D, 3D, 4D Bin Packing",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/olragon/binpackingjs"
-  },
+  "name": "3dbin",
+  "version": "1.0.0",
+  "description": "3dbin api",
   "main": "dist/BinPacking.min.js",
   "scripts": {
-    "build": "webpack && BUILD_MINIFY=1 webpack",
-    "dev": "webpack --progress --colors --watch",
-    "test": "mocha --require @babel/register ./test/*.js",
-    "test-dev": "mocha --watch ./test/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browserslist": [
-    "defaults"
+  "keywords": [
+    "3dBin Problem"
   ],
-  "author": "Long Nguyen",
-  "license": "MIT",
+  "author": "Kris Wold",
+  "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "execution-time": "^1.4.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2",
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
