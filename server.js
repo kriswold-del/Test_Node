@@ -2,6 +2,7 @@ var express = require('express')
 const perf = require('execution-time')();
 // var bins;
 // var items;
+var accesstoken;
 const PORT = process.env.PORT || 3000;
 app = express(),
     app.use(
@@ -20,7 +21,7 @@ app.post('/', function(request, response){
     response.send(jsonresponse);
 });
 
-if(bins == undefined){
+if(accesstoken == undefined){
     app.use(express.static('www'));
     console.log('3dbin html server started on: ' + PORT);
 }else{
