@@ -26,6 +26,7 @@ if(bins == undefined){
 }else{
     console.log('3dbin RESTful API server started on: ' + PORT);
 }
+
 let binSample = {
     width: 60,
     height: 60,
@@ -57,7 +58,7 @@ let packageSample3 = {
 let packageSamples = [packageSample1, packageSample2, packageSample3].filter(packageSample => packageSample.amount > 0);
 packageSamples = sortPackageSamples(packageSamples);
 
-export function sortPackageSamples(packageSamples) {
+function sortPackageSamples(packageSamples) {
     return packageSamples.sort((prev, next) => {
         const height1 = prev.height;
         const height2 = next.height;
@@ -73,13 +74,13 @@ export function sortPackageSamples(packageSamples) {
     });
 }
 
-export const AXIS = {
+const AXIS = {
     x: 'x',
     y: 'y',
     z: 'z'
 };
 
-export function getAxisToDimensionMap() {
+function getAxisToDimensionMap() {
     return {
         x: 'width',
         y: 'depth',
@@ -87,21 +88,21 @@ export function getAxisToDimensionMap() {
     };
 }
 
-export function getDimensionOfAxis(dimensionalObject, axis) {
+function getDimensionOfAxis(dimensionalObject, axis) {
     return dimensionalObject[getAxisToDimensionMap()[axis]];
 }
 
-export function createBin(binSample) {
+function createBin(binSample) {
     return { ...binSample, layers: [createLayer()] };
 }
 
-export function createLayer() {
+function createLayer() {
     return {
         columns: [createColumn()]
     };
 }
 
-export function createColumn() {
+function createColumn() {
     return { packageReferences: [] };
 }
 
@@ -110,22 +111,22 @@ export function getFirstColumn(layer) {
     return firstColumn;
 }
 
-export function getLastColumn(layer) {
+function getLastColumn(layer) {
     const [lastColumn] = layer.columns.slice(-1);
     return lastColumn;
 }
 
-export function getFirstPlacedPackageOfColumn(column) {
+function getFirstPlacedPackageOfColumn(column) {
     const [firstPlacedPackage] = column.packageReferences.slice(0, 1)
     return firstPlacedPackage;
 }
 
-export function getLastPlacedPackageOfColumn(column) {
+function getLastPlacedPackageOfColumn(column) {
     const [lastPlacedPackage] = column.packageReferences.slice(-1)
     return lastPlacedPackage;
 }
 
-export function calculateRemainingGap(originPackage, bin, placingAxis) {
+function calculateRemainingGap(originPackage, bin, placingAxis) {
     const totalSize = getDimensionOfAxis(bin, placingAxis);
     const startingPosition = originPackage[placingAxis] + getDimensionOfAxis(originPackage, placingAxis);
 
@@ -138,7 +139,7 @@ export function calculateAmountOfPackageToBePlaced(remainingGap, packageToBePlac
     return Math.floor(remainingGap / getDimensionOfAxis(packageToBePlaced, placingAxis));
 }
 
-export function createPackagePlaceReference(packageSample, position) {
+function createPackagePlaceReference(packageSample, position) {
     const { width, height, depth } = packageSample;
 
     return {
@@ -149,7 +150,7 @@ export function createPackagePlaceReference(packageSample, position) {
     }
 }
 
-export function getWidthOfWidestPackageInColumn(column, initialValue) {
+function getWidthOfWidestPackageInColumn(column, initialValue) {
     return column.packageReferences.reduce((highest, nextPackage) => nextPackage.width > highest ? nextPackage.width : highest, initialValue)
 }
 
