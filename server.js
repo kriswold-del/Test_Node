@@ -28,6 +28,6 @@ if(accesstoken == undefined){
     console.log('3dbin RESTful API server started on: ' + PORT);
 }
 
-require("binpacking.js")
+require("/binpacking.js");
 
 app.listen(PORT);
